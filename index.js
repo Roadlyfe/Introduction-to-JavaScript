@@ -36,9 +36,13 @@ Do the following:
    HINT: no function required
 */
 
-
-
-
+let value1 = 'this is value1!'
+let value2 = 'this is value2!' 
+if (value1 === 'this is value1!'){
+  console.log('You did it, Humphrey!');
+}else {
+  console.log('You failed'); 
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -51,9 +55,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
-
+var partyLike = "1999";
+partyLike = 1999;
+console.log(partyLike);
 /*
 Task 1d - Multiply
  
@@ -161,10 +165,44 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
-}
 
+let computerChoice = Math.floor(Math.random() * 3);
+let computer;
+if (computerChoice === 0){
+  computer = 'rock';
+}else if (computerChoice === 1){
+  computer = 'paper';
+}else if (computerChoice === 2){
+  computer = 'scissors'
+}
+function game(user, computer){
+if (user === 'rock'){
+  if(computer === 'rock'){
+    return "it's a tie";
+  }else if (computer === 'scissors'){
+    return "you win!";
+  }else if (computer === 'paper'){
+    return "you lose!";
+  }
+}else if (user === 'paper'){
+  if(computer === 'paper'){
+    return "it's a tie";
+  }else if (computer === 'scissors'){
+    return "you lose!";
+  }else if (computer === 'rock'){
+    return "you win!";
+  }
+}else if (user === 'scissors'){
+  if(computer === 'scissors'){
+    return "it's a tie";
+  }else if (computer === 'rock'){
+    return "you lose!";
+  }else if (computer === 'paper'){
+    return "you win!";
+  }
+ }
+}
+console.log(game('paper', 'rock'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -178,8 +216,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return km * 0.621371;
 }
 
 
@@ -192,8 +230,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48;
 }
 
 
@@ -208,8 +246,10 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+      for(let i = num; i > 1; i--){
+        return  `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`;
+      }
 }
 
 
@@ -228,8 +268,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+if(score >= 90){
+  return 'you got an A';
+} else if (score >= 80){
+  return 'you got a B';
+}else if (score >= 70){
+  return 'you got a C';
+}else  if (score >= 60){
+  return 'you got a D';
+}else {
+  return 'you got an F'
+}
 }
 
 
@@ -247,8 +297,9 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(str) {
+  const count = str.match(/[aeiou]/gi).length;
+  return count;
 }
 
 
